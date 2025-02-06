@@ -27,8 +27,8 @@
                         class="bg-gray-100 dark:bg-gray-700 px-4 py-2 rounded-full w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="Search for songs, artists...">
                 </div>
-                <button class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700">Login</button>
-                <button class="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 hover:text-white">Register</button>
+                <a href="../Views/login.php" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700">Login</a>
+                <a href="../Views/register.php" class="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 hover:text-white">Register</a>
             </div>
         </nav>
     </header>
@@ -112,15 +112,6 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Dark mode toggle functionality
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark')
-        } else {
-            document.documentElement.classList.remove('dark')
-        }
-    </script>
 </body>
 
 </html>
