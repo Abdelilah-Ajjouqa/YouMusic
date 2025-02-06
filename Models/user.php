@@ -48,8 +48,29 @@ class User {
         }
     }
 
-    public function login(){
+    public function login(PDO $db, $firstName, $lastName, $email, $password){
+        try{
+            $query = 'SELECT * FROM users where email = :email';
+            $stmt = $db->prepare($query);
+            $stmt->bindParam(':email', $this->email);
+            $stmt->execute();
 
+            $logInfo = $stmt->fetch(PDO::FETCH_ASSOC);
+            $user_id = $db->lastInsertId();
+
+            if(!$logInfo || !password_verify($password, $logInfo['password'])){
+                header('location : #');
+                return false;
+            } else {
+                $_SESSION['user_id'] = $user_id;
+                $_SESSION['firstName'] = $firstName;
+                $_SESSION['lastName'] = $lastName;
+                $_SESSION['email'] = $email;
+            }
+
+        } catch (PDOException $e) {
+            return "Error : ". $e->getMessage();
+        }
     }
 
     public function updateAccount(){
