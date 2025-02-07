@@ -14,7 +14,7 @@ class User {
         $this->email = $email;
     }
 
-    public function register(PDO $db, $firstName, $lastName, $username, $email, $password, $confirmPassword, $role = 'listener'){
+    public function register(PDO $db, $firstName, $lastName, $username, $password, $confirmPassword, $role = 'listener'){
         try {
             $query = 'SELECT * FROM users WHERE email = :email';
             $stmt = $db->prepare($query);
