@@ -17,7 +17,7 @@
             </div>
 
             <!-- Login Form -->
-            <form id="loginForm" class="space-y-6">
+            <form id="loginForm" action="../Controllers/loginController.php" class="space-y-6">
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email Address</label>
                     <input

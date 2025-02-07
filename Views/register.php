@@ -19,7 +19,7 @@
                 <p class="text-gray-600 dark:text-gray-300">Join MusicStream and discover your next favorite song</p>
             </div>
 
-            <form id="registrationForm" class="space-y-6">
+            <form id="registrationForm" action="../Controllers/registerController.php" class="space-y-6">
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label for="firstName" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">First Name</label>
