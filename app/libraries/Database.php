@@ -11,7 +11,7 @@ class Database {
         try{
             $dsn = "pgsql:host={$this->host};dbname={$this->dbname};port=5432";
             $this->conn = new PDO($dsn, $this->user, $this->password);
-            echo 'connection succes';
+            // echo 'connection succes';
         } catch(PDOException $e){
             echo 'connection echoué : '. $e->getMessage();
             exit();
