@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
     * App Core Class
     * Creates URL & loads core controller
@@ -10,7 +10,10 @@ class Core {
     protected $params = [];
 
     public function getUrl(){
-        echo $_GET['url'];
+        if(isset($_GET['url'])){
+            $url = rtrim($_GET['url'], '/');
+            $url = filter_var($url, FILTER_SANITIZE_URL);
+        }
     }
 
     public function __construct()
